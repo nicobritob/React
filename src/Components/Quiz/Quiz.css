@@ -1,0 +1,52 @@
+.container{/* Editamos directamente la clase container escrita en Quiz.jsx */
+    width: 640px;
+    margin: auto;
+    margin-top: 150px;
+    background: white;
+    color: #262626;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 40px 50px;
+}
+
+.container hr{/* Editamos el hr de la clase container */
+    height: 2px;
+    border: none;
+    background: #707070;
+}
+
+.container h2{/* Editamos la letra h2 de la clase container */
+    font-size: 27px;
+    font-weight: 500;
+}
+
+.container ul li{/* Editamos la lista ul li de container creando bordes */
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding-left: 15px;
+    border: 1px solid #686868;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.container button{/* Editamos el boton de siguiente */
+    margin: auto;
+    width: 250px;
+    height: 65px;
+    background: #553f9d;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.container .index{
+    margin: auto;
+    font-size: 18px;
+
+}
