@@ -23,18 +23,19 @@ export const Quiz = () => {
     const checkAns = (e,ans) => {
         if (lock === false) {
             if(question.ans===ans) {
-            e.target.classList.add("correct");
-            setLock(true);
-            setScore(prev=>prev+1);
-            }
-            else{
-            e.target.classList.add("wrong");
-            setLock(true);
+
+                e.target.classList.add("correct");
+                setLock(true);
+                setScore(prev=>prev+1);
+                }
+                else{
+                e.target.classList.add("wrong");
+                setLock(true);
             }
         }
     }
 
-    const next = () => {
+    const next = () => {/*  */
         if (lock === true){
             if (index === data.length -1) {
                 setResult(true);
@@ -53,7 +54,7 @@ export const Quiz = () => {
 
     const reset = () => {
         setIndex(0);
-        setQuestion(data[]);
+        setQuestion(data[0]);
         setScore(0);
         setLock(false);
         setResult(false);
@@ -66,15 +67,15 @@ return (
         {result?<></>:<>
         <h2>{index+1}. {question.question}</h2>
         <ul>
-            <li onClick={(e)=>{checkAns(e,1)}}>{question.option2}</li>
-            <li onClick={(e)=>{checkAns(e,2)}}>{question.option1}</li>
-            <li onClick={(e)=>{checkAns(e,3)}}>{question.option3}</li>
+            <li ref={Option1} onClick={(e)=>{checkAns(e,1)}}>{question.option2}</li>
+            <li ref={Option2} onClick={(e)=>{checkAns(e,2)}}>{question.option1}</li>
+            <li ref={Option3} onClick={(e)=>{checkAns(e,3)}}>{question.option3}</li>
         </ul>
-        <button>onClick={next} Next</button>
+        <button onClick={next}>Next</button>
         <div className="index">{index+1} de {data.length} preguntas</div>
         </>}
         {result?<>
-        <h2>Tu puntaje es {score} de {data.length}</h2>
+            <h2>Tu puntaje es {score} de {data.length}</h2>
         <button onClick={reset}>Nuevo intento</button>
         </>:<></>}
 
